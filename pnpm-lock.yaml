@@ -1,11 +1,14 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@keyvhq/core': ^1.6.6
+  '@keyvhq/mongo': ^1.6.6
   '@types/cors': ^2.8.12
   '@types/express': ^4.17.13
   '@types/multer': ^1.4.7
   '@types/node': '*'
   cors: ^2.8.5
+  dotenv: ^16.0.0
   express: ^4.17.3
   mongoose: ^6.2.7
   multer: ^1.4.4
@@ -14,8 +17,11 @@ specifiers:
   typescript: ^4.6.2
 
 dependencies:
+  '@keyvhq/core': 1.6.6
+  '@keyvhq/mongo': 1.6.6
   '@types/node': 17.0.21
   cors: 2.8.5
+  dotenv: 16.0.0
   express: 4.17.3
   mongoose: 6.2.7
   multer: 1.4.4
@@ -40,6 +46,21 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@cspotcode/source-map-consumer': 0.8.0
+    dev: false
+
+  /@keyvhq/core/1.6.6:
+    resolution: {integrity: sha512-jGj7OMLKYsaOO1P4BNWrJjs/sI3y/IgdoeP/5i1w+Dc/fq9r5r/K7Zq7VeNjcWfbnP3BvSlvcVz82RUGbwwGAg==}
+    engines: {node: '>= 12'}
+    dependencies:
+      json-buffer: 3.0.1
+    dev: false
+
+  /@keyvhq/mongo/1.6.6:
+    resolution: {integrity: sha512-SE+5Tr4XYt4yoqmPB1L063vWmXZhxKMGgpAhu7Prr9U4fod82XjmUSjVghpEPRpHG/gic37Wasv5zdvo0B0ONg==}
+    engines: {node: '>= 12'}
+    dependencies:
+      mongodb: 4.4.1
+      pify: 5.0.0
     dev: false
 
   /@tsconfig/node10/1.0.8:
@@ -310,6 +331,11 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: false
 
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
+    engines: {node: '>=12'}
+    dev: false
+
   /ee-first/1.1.1:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: false
@@ -435,6 +461,10 @@ packages:
     resolution: {integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=}
     dev: false
 
+  /json-buffer/3.0.1:
+    resolution: {integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==}
+    dev: false
+
   /kareem/2.3.4:
     resolution: {integrity: sha512-Vcrt8lcpVl0s8ePx634BxwRqmFo+5DcOhlmNadehxreMTIQi/9hOL/B3hZQQbK5DgMS7Lem3xABXV7/S3jy+7g==}
     dev: false
@@ -500,6 +530,18 @@ packages:
 
   /mongodb/4.3.1:
     resolution: {integrity: sha512-sNa8APSIk+r4x31ZwctKjuPSaeKuvUeNb/fu/3B6dRM02HpEgig7hTHM8A/PJQTlxuC/KFWlDlQjhsk/S43tBg==}
+    engines: {node: '>=12.9.0'}
+    dependencies:
+      bson: 4.6.1
+      denque: 2.0.1
+      mongodb-connection-string-url: 2.5.2
+      socks: 2.6.2
+    optionalDependencies:
+      saslprep: 1.0.3
+    dev: false
+
+  /mongodb/4.4.1:
+    resolution: {integrity: sha512-IAD3nFtCR4s22vi5qjqkCBnuyDDrOW8WVSSmgHquOvGaP1iTD+XpC5tr8wAUbZ2EeZkaswwBKQFHDvl4qYcKqQ==}
     engines: {node: '>=12.9.0'}
     dependencies:
       bson: 4.6.1
@@ -596,6 +638,11 @@ packages:
 
   /path-to-regexp/0.1.7:
     resolution: {integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=}
+    dev: false
+
+  /pify/5.0.0:
+    resolution: {integrity: sha512-eW/gHNMlxdSP6dmG6uJip6FXN0EQBwm2clYYd8Wul42Cwu/DK8HEftzsapcNdYe2MfLiIwZqsDk2RDEsTE79hA==}
+    engines: {node: '>=10'}
     dev: false
 
   /process-nextick-args/2.0.1:
