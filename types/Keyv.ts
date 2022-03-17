@@ -1,5 +1,12 @@
 import keyv from '@keyvhq/core';
 
+
+
+interface UDBMain {
+    keyv: keyv<unknown>;
+    state: UDBMain;
+}   
+
 interface DBClient {
     keyv: keyv<unknown>;
     set: keyv<unknown>['set'];
@@ -8,4 +15,8 @@ interface DBClient {
     iterator: keyv<unknown>['iterator'];
 }
 
-export type { DBClient };
+interface DBMain extends DBClient {
+    utils?: UDBMain;
+}
+
+export type { DBClient, DBMain, UDBMain };
