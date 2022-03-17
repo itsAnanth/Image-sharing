@@ -11,7 +11,7 @@ const ImageSchema = new mongoose.Schema({
         default: Date.now
     },
     image: {
-        type: Buffer
+        type: Buffer,
     },
     contentType: {
         type: String,
@@ -19,4 +19,4 @@ const ImageSchema = new mongoose.Schema({
     }
 });
 
-export default ImageSchema;
+export default mongoose.model('Image', ImageSchema);
