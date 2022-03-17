@@ -1,5 +1,5 @@
 import { config } from 'dotenv';
-import type { DBClient as IDBC} from '../types/Keyv';
+import type { DBClient as IDBC } from '../types/Keyv';
 import Keyv from '@keyvhq/core';
 import KeyvMongo from '@keyvhq/mongo';
 
