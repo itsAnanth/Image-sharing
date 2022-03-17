@@ -1,11 +1,13 @@
 import keyv from '@keyvhq/core';
+import { Image } from './Image';
 
 
 
 interface UDBMain {
     keyv: keyv<unknown>;
     state: UDBMain;
-}   
+    cluster: string;
+}
 
 interface DBClient {
     keyv: keyv<unknown>;
@@ -19,4 +21,8 @@ interface DBMain extends DBClient {
     utils?: UDBMain;
 }
 
-export type { DBClient, DBMain, UDBMain };
+type DBMainCluster = {
+    images: Map<string, Image>
+}
+
+export type { DBClient, DBMain, UDBMain, DBMainCluster };
