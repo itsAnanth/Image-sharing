@@ -1,6 +1,7 @@
 import type { Request, Response } from 'express';
 import db from '../database/main'
 import Image from '../modules/Image';
+import res from '../modules/Response';
 
 
 const upload = async (request: Request, response: Response) => {
@@ -19,7 +20,9 @@ const upload = async (request: Request, response: Response) => {
 
     console.log('image saved with id ' + image.id);
 
-    console.log(await db.utils.getImage(image.id))
+    response.send(res.success({
+        message: Buffer.from(image.buffer).toString('base64')
+    }))
 }
 
 
