@@ -20,22 +20,26 @@ class DBUtils {
         let val = (await this.keyv.get(this.cluster) as (null|DBMainCluster|undefined));
         if (!val) {
             val = {
-                images: new Map()
+                images: {}
             };
         }
+
         return val;
     }
 
     async setImage(image: Image) {
         const res = await this.get();
-        res.images.set(image.id, image);
+        res.images[image.id] = image;
         await this.keyv.set(this.cluster, res);
     }
 
     async getImage(id: string): Promise<Image|null|undefined> {
-        return (await this.get()).images.get(id);
+        return (await this.get()).images[id];
     }
 
 }
 
 db.utils = new DBUtils(db.keyv);
+
+
+export default db;
