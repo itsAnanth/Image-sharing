@@ -3,10 +3,11 @@ import uuid from 'uuid-random';
 interface Image extends IImage { };
 
 class Image {
-    constructor({ buffer, title, timestamp }: ImagePayload) {
+    constructor({ buffer, title, timestamp, contentType }: ImagePayload) {
         this.buffer = buffer;
         this.title = title;
         this.timestamp = timestamp;
+        this.contentType = contentType;
         this.id = uuid();
     }
 }
