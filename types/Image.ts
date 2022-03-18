@@ -2,6 +2,7 @@ type ImagePayload = {
     buffer: Buffer;
     title: string;
     timestamp: number;
+    contentType: string;
 }
 
 
