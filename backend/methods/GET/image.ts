@@ -24,7 +24,5 @@ export default new Endpoint({
             message: base64,
             code: Response.status.OK
         }));
-
-        console.log('at image, sent data', image);
     }
 })
