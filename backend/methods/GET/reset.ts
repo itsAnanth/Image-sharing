@@ -15,5 +15,9 @@ export default new Endpoint({
             code: status.UNAUTHORIZED
         }));
         await db.clear();
+        res.status(Response.status.OK).send(Response.success({
+            message: 'Erased Database',
+            code: Response.status.OK
+        }))
     }
 })
