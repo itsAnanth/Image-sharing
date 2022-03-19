@@ -7,7 +7,7 @@ interface UDBMain {
     keyv: keyv<unknown>;
     state: UDBMain;
     cluster: string;
-    setImage: (image: Image) => Promise<any>;
+    setImage: (id: string, image: Image) => Promise<any>;
     getImage: (id: string) => Promise<Image|null|undefined>;
 }
 
@@ -24,7 +24,7 @@ interface DBMain extends DBClient {
 }
 
 type DBMainCluster = {
-    images: { [key: string]: Image }
+    image: Image
 }
 
 export type { DBClient, DBMain, UDBMain, DBMainCluster };
