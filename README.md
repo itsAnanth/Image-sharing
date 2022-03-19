@@ -1,4 +1,4 @@
-# Sharify
+# Image-Sharing
 
 A simple MERN stack app to upload and share images
 
