@@ -16,7 +16,7 @@ const upload = async (request: Request, response: Response) => {
         timestamp: Date.now()
     })
 
-    await db.utils.setImage(image);
+    await db.utils.setImage(image.id, image);
 
     console.log('image saved with id ' + image.id);
 
