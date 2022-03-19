@@ -6,25 +6,25 @@ export default new Endpoint({
     path: '/image',
     callback: async (req, res, next) => {
         const id = req.query.id;
+        console.time('fetch image');
         const image = await db.utils.getImage(id as string);
+
+        console.timeEnd('fetch image');
+
+        console.time('convert image');
         if (!image)
             return res.status(Response.status.NOT_FOUND).send(Response.error({
                 message: 'Image not found',
                 code: Response.status.NOT_FOUND
             }))
         const base64 = Buffer.from(image.buffer).toString('base64');
-        console.log(image);
+        console.timeEnd('convert image');
 
-        const index_file =
-            `<html lang="en">
-        <body>
-            <img width="30px" height="30px" src="data:image/png;base64,${base64}" alt="img">
-            
-        </body>
-        </html>`;
+        res.status(Response.status.OK).send(Response.success({
+            message: base64,
+            code: Response.status.OK
+        }));
 
-        res.send(index_file);
-        //06381a1a-6360-41f2-9dca-f232cb60c3cd
-        // console.log(await db.utils.getImage(id as string));        
+        console.log('at image, sent data', image);
     }
 })
