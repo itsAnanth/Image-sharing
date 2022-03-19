@@ -1,8 +1,9 @@
 import React from 'react';
+import Upload from './components/Upload';
 
 function App() {
 	return (
-		<div>Hello World!</div>
+		<Upload />
 	);
 }
 
