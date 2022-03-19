@@ -16,25 +16,19 @@ class DBUtils {
     }
 
 
-    async get() {
-        let val = (await this.keyv.get(this.cluster) as (null|DBMainCluster|undefined));
-        if (!val) {
-            val = {
-                images: {}
-            };
-        }
-
-        return val;
+    async get(id: string) {
+        let val = (await this.keyv.get(id) as (null|DBMainCluster|undefined));
+        return val ? val : { image: null };
     }
 
-    async setImage(image: Image) {
-        const res = await this.get();
-        res.images[image.id] = image;
-        await this.keyv.set(this.cluster, res);
+    async setImage(id: string, image: Image) {
+        const res = await this.get(id);
+        res.image = image;
+        await this.keyv.set(id, res);
     }
 
     async getImage(id: string): Promise<Image|null|undefined> {
-        return (await this.get()).images[id];
+        return (await this.get(id)).image;
     }
 
 }
