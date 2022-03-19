@@ -3,7 +3,7 @@ import express from 'express';
 import Server from './modules/Server';
 import cors from 'cors';
 const app = express();
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 5000;
 const includeMulter = multer().any();
 
 app.use(cors());
