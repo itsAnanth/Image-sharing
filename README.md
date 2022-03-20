@@ -11,3 +11,5 @@ P.S: frontend code is extremely bad (started react recently)
 * add TTL on backend to prevent memory depletion
 * add upload size limit
 * improve backend code
+* Add authentication
+* Add accounts
