@@ -13,3 +13,4 @@ P.S: frontend code is extremely bad (started react recently)
 * improve backend code
 * Add authentication
 * Add accounts
+* Convert to amazon s3 buckets
